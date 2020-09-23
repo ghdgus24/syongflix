@@ -38,7 +38,7 @@ export default class extends React.Component {
 		} catch {
 			this.setState({ error: "Can't find anything" });
 		} finally {
-			this.setState({ loading: true, result });
+			this.setState({ loading: false, result });
 		}
 	}
 
