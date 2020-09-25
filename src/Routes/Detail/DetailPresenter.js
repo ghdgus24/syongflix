@@ -3,12 +3,16 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
+import { media } from "../../Components/media";
 
 const Container = styled.div`
 	width: 100%;
 	height: calc(100vh - 50px);
 	position: relative;
 	padding: 50px;
+	${media.mobile`
+		height: auto;
+	`}
 `;
 
 const Backdrop = styled.div`
@@ -32,6 +36,9 @@ const Content = styled.div`
 	position: relative;
 	border-radius: 5px;
 	z-index: 1;
+	${media.mobile`
+		flex-direction: column;
+	`}
 `;
 
 const Cover = styled.div`
@@ -41,11 +48,19 @@ const Cover = styled.div`
 	background-position: center center;
 	background-size: cover;
 	border-radius: 5px;
+	${media.mobile`
+		width: 100%;
+		height: 109.33vw;
+		margin-bottom: 4vw;
+	`}
 `;
 
 const Data = styled.div`
 	width: 70%;
 	margin-left: 10px;
+	${media.mobile`
+		width: 100%;
+	`}
 `;
 
 const Title = styled.h3`
@@ -68,6 +83,9 @@ const Overview = styled.p`
 	line-height: 1.5;
 	width: 50%;
 	margin-bottom: 50px;
+	${media.mobile`
+		width: 73.33vw;
+	`}
 `;
 
 const VideoContainer = styled.div`

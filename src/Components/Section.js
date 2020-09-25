@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { media } from "./media";
 
 const Container = styled.div`
 	:not(:last-child) {
@@ -11,6 +12,9 @@ const Container = styled.div`
 const Title = styled.span`
 	font-size: 14px;
 	font-weight: 600;
+	${media.mobile`
+		font-size: 4vw;
+	`}
 `;
 
 const Grid = styled.div`
@@ -18,6 +22,15 @@ const Grid = styled.div`
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 125px);
 	grid-gap: 25px;
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	${media.mobile`
+		display: flex;
+		overflow-x: scroll;
+	`}
 `;
 
 const Section = ({ title, children }) => (
