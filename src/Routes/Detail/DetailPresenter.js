@@ -94,8 +94,11 @@ const VideoContainer = styled.div`
 `;
 
 const VideoItem = styled.div`
-	width: 560px;
+	/* width: 560px; */
 	margin-right: 15px;
+	${media.mobile`
+		/* width: 35vw; */
+	`}
 `;
 
 const DetailPresenter = ({ result, loading, error }) =>
@@ -155,12 +158,13 @@ const DetailPresenter = ({ result, loading, error }) =>
 						</Item>
 					</ItemContainer>
 					<Overview>{result.overview}</Overview>
+
 					<VideoContainer>
 						{result.videos.results.map((video) => (
 							<VideoItem key={video.id}>
 								<iframe
-									width="560"
-									height="315"
+									width="250"
+									height="160"
 									src={`https://www.youtube.com/embed/${video.key}`}
 									frameborder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
